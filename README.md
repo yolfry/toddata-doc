@@ -139,19 +139,34 @@ interface InvoiceProduct {
 }
 ```
 
-#### Factura Principal
+## 🧾 Invoices (Facturas)
+
+### 💻 Interfaz: `InvoicePayment`
+```typescript
+interface InvoicePayment {
+  id: string;            // UUID
+  date: string;          // TIMESTAMP (ISO 8601)
+  totalPayment: number;  // Monto pagado
+  plazoNumber: number;   // Número de plazo/cuota
+  signatureUrl: string;  // Firma del cliente
+  clientCEDULA: string;  // Cédula del cliente
+}
+```
+
+### 💻 Interfaz: `Invoice`
 ```typescript
 interface Invoice {
-  id: string;                 // UUID: Identificador único de la factura.
-  businessId: string;         // UUID: ID del negocio emisor.
-  dateIssued: string;         // Fecha de emisión (ISO 8601).
-  paymentTermDays: number;    // Días para el pago (0 = contado).
-  dueDate: string;            // Fecha de vencimiento calculada.
-  products: InvoiceProduct[]; // Lista de productos vendidos.
-  details: string;            // Notas o comentarios.
-  clientCEDULA: string;       // Referencia al cliente.
-  signatureUrl: string;       // URL de la firma de conformidad.
-  invoiceImageUrl: string;    // URL de la factura física (si aplica).
-  totalAmount: number;        // Monto total.
+  id: string;
+  businessId: string;
+  dateIssued: string;
+  paymentTermDays: number;
+  dueDate: string;
+  products: InvoiceProduct[];
+  payments: InvoicePayment[];
+  details: string;
+  clientCEDULA: string;
+  signatureUrl: string;
+  invoiceImageUrl: string;
+  totalAmount: number;
 }
 ```
