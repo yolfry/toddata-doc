@@ -170,3 +170,9 @@ interface Invoice {
   totalAmount: number;
 }
 ```
+
+
+## Example image Esquema
+⚠️ Esta imagen es solo una ilustración y las propiedades pueden cambiar.
+Por favor, lea la documentación oficial y obtenga las propiedades desde la documentación, no desde esta imagen.
+![Objeto 1](https://raw.githubusercontent.com/yolfry/toddata-doc/refs/heads/main/generate%20-%20diagram.png)
